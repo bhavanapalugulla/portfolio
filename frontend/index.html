@@ -6,21 +6,6 @@
   <title>Palugulla Bhavana | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
 </head>
 <body>
 
@@ -41,7 +26,7 @@
 </header>
 
 <section class="hero" id="home">
-  <div class="container hero-content reveal">
+  <div class="container hero-content" data-aos="fade-up">
     <div class="text">
       <h2>Hello there! I'm <span>Bhavana Palugulla</span></h2>
       <h3>Aspiring Web Developer | Creative Thinker</h3>
@@ -56,26 +41,16 @@
     </div>
   </div>
 </section>
-  <section id="about" class="about-section container reveal" data-aos="fade-up">
+
+<section id="about" class="about-section container" data-aos="fade-up">
   <h2>About Me</h2>
-  <p>
-    Hello! I'm Bhavana Palugulla, a dedicated and passionate web developer with a strong foundation in front-end and back-end technologies. 
-    I love crafting clean, efficient, and user-friendly web applications that provide great user experiences across devices.
-  </p>
-  <p>
-    My journey started with learning HTML, CSS, and JavaScript, and over time, I have expanded my skills to include React, Node.js, Express, and MongoDB.
-    I am enthusiastic about responsive design, accessibility, and continuous learning to stay updated with the latest web development trends.
-  </p>
-  <p>
-    Recently, I earned the Salesforce AI Certification, which helped me deepen my understanding of AI applications in software development. 
-    I have contributed to projects such as <a href="https://github.com/bhavanapalugulla/Online-book-" target="_blank" rel="noopener noreferrer">Online Book Store</a>.
-  </p>
-  <p>
-    When I’m not coding, I enjoy photography, hiking, and exploring emerging technologies in AI and web development.
-  </p>
+  <p>Hello! I'm Bhavana Palugulla, a dedicated and passionate web developer with a strong foundation in front-end and back-end technologies.</p>
+  <p>My journey started with learning HTML, CSS, and JavaScript. I expanded my skills to include React, Node.js, Express, and MongoDB.</p>
+  <p>I recently earned the Salesforce AI Certification and contributed to the <a href="https://github.com/bhavanapalugulla/Online-book-" target="_blank">Online Book Store</a>.</p>
+  <p>When I’m not coding, I enjoy photography, hiking, and exploring emerging technologies in AI and web development.</p>
 </section>
 
-<section id="skills" class="skills-section container reveal" data-aos="fade-right">
+<section id="skills" class="skills-section container" data-aos="fade-right">
   <h2>Skills</h2>
   <ul class="skills-list">
     <li>HTML5 & CSS3</li>
@@ -88,73 +63,44 @@
   </ul>
 </section>
 
-
-<section id="projects" class="projects-section container reveal">
+<section id="projects" class="projects-section container" data-aos="fade-left">
   <h2>Projects</h2>
   <div class="project-item">
     <h3>Online Book Store</h3>
     <p>A full-stack web application for buying and selling books online, built with Node.js, Express, MongoDB, and Angular.</p>
-    <a href="https://github.com/bhavanapalugulla/Online-book-" target="_blank" rel="noopener noreferrer" class="btn outline">View on GitHub</a>
+    <a href="https://github.com/bhavanapalugulla/Online-book-" target="_blank" class="btn outline">View on GitHub</a>
   </div>
 </section>
 
-<section id="education" class="education-section container reveal">
+<section id="education" class="education-section container" data-aos="fade-up">
   <h2>Education & Certifications</h2>
   <div class="edu-item">
     <h3>Salesforce AI Certification</h3>
-    <p>Completed a professional certification in Artificial Intelligence offered by Salesforce, focusing on AI technologies and applications.</p>
+    <p>Completed a professional certification in Artificial Intelligence offered by Salesforce.</p>
   </div>
 </section>
 
-<section id="contact" class="contact-section container reveal">
+<section id="contact" class="contact-section container" data-aos="zoom-in">
   <h2>Contact Me</h2>
   <p>You can reach me via email at <a href="mailto:p.bhavanareddy210@gmail.com">p.bhavanareddy210@gmail.com</a> or connect with me on LinkedIn below.</p>
-  <p>
-    <a href="https://www.linkedin.com/in/bhavana-reddy-6707b52b6/" target="_blank" rel="noopener noreferrer" class="btn outline">LinkedIn Profile</a>
-  </p>
-</section>
-<section id="about" class="about-section container" data-aos="fade-up">
-  <!-- Content -->
+  <p><a href="https://www.linkedin.com/in/bhavana-reddy-6707b52b6/" target="_blank" class="btn outline">LinkedIn Profile</a></p>
 </section>
 
-<section id="skills" class="skills-section container" data-aos="fade-right">
-  <!-- Content -->
-</section>
-
-<section id="projects" class="projects-section container" data-aos="fade-left">
-  <!-- Content -->
-</section>
-
-  
 <footer class="footer">
   <p>© 2025 Palugulla Bhavana. All rights reserved.</p>
+  <p>
+    Connect with me:
+    <a href="https://www.linkedin.com/in/bhavana-reddy-6707b52b6/" target="_blank">LinkedIn</a> |
+    <a href="mailto:p.bhavanareddy210@gmail.com">Email</a>
+  </p>
 </footer>
-
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-
-  function revealOnScroll() {
-    const windowHeight = window.innerHeight;
-    reveals.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) {
-        el.classList.add('active');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1000, // Animation duration in milliseconds
-    once: true, // Whether animation should happen only once - while scrolling down
+    duration: 1000,
+    once: true
   });
 </script>
-
-
 </body>
 </html>
