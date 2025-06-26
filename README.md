@@ -12,7 +12,7 @@ This project showcases my work, skills, and projects using a clean and modern de
 
 ## 🚀 Technologies Used
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
 - Responsive Design
