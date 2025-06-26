@@ -7,7 +7,7 @@ This project showcases my work, skills, and projects using a clean and modern de
 ---
 
 ## 🌐 Live Demo
-
+![Portfolio Screenshot](portfolio.png)
 👉 [Visit the live site on Netlify](https://bhavanapalugulla.netlify.app/)
 
 ---
