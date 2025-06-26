@@ -16,4 +16,3 @@ This project showcases my work, skills, and projects using a clean and modern de
 - CSS3
 - JavaScript
 - Responsive Design
-- (Optional: React, if you used it)
