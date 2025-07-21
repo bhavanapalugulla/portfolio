@@ -7,16 +7,16 @@ const educationData = [
   {
     logo: klLogo,
     year: "2022 - 2026",
-    degree: "BTech in Major in AI&DS; Minors in Cybersecurity & Blockchain",
+    degree: "BTech in CSE , With Specialization Data Science",
     institute: "KL UNIVERSITY, VIJAYAWADA",
     description:
-      "Currently pursuing B.Tech with a focus on AI, Machine Learning, DSA, Web Development, Full Stack Development. Engaged in real-time web and data-driven projects.",
+      "Currently pursuing B.Tech with a focus on DSA, Web Development, Full Stack Development. Engaged in real-time web and data-driven projects.",
   },
   {
     logo: saradaLogo,
     year: "2020 – 2022",
     degree: "Intermediate (MPC)",
-    institute: "SRI CHAITANYA JUNIOR COLLEGE, GUNTUR",
+    institute: "SRI SARADA JUNIOR COLLEGE, GUNTUR",
     description:
       "Completed Intermediate with core subjects: Mathematics, Physics, and Chemistry. Built strong problem-solving and analytical skills.",
   },
@@ -24,7 +24,7 @@ const educationData = [
     logo: schoolLogo,
     year: "2010 – 2020",
     degree: "10th Class",
-    institute: "XYZ HIGH SCHOOL, GUNTUR",
+    institute: "CHIGURUPATI SRI KRISHNAVENI SCHOOL, VIJAYAWADA",
     description:
       "Completed foundational education with distinction and active participation in co-curricular activities.",
   },
