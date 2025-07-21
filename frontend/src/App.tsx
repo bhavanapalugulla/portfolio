@@ -12,10 +12,15 @@ import Footer from "./components/Footer";
 import "./index.css";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  // 🔥 STEP 1: Load theme from localStorage on first render
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
 
+  // 🔥 STEP 2: Apply theme and save to localStorage
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
