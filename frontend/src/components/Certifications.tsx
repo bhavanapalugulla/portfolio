@@ -4,6 +4,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaEye } from "react-icons/fa";
 
+// Import certificate images from src/assets/certificates/
+import aviatrixImg from "../assets/certificates/aviatrix.png";
+import rpa from "../assets/RPA.png";
+import oracleImg from "../public/Oracle_certificate.pdf";
+import salesforceImg from "../public/Sales force.pdf";
+
+// Certificate data
 const certifications = [
   {
     year: "2025",
@@ -11,15 +18,15 @@ const certifications = [
     subtitle: "Multicloud Network Associate",
     description:
       "The industry's first multicloud networking certification covering AWS, Azure, GCP, and OCI. Trained to build, secure, and scale multicloud networks using the Aviatrix Cloud Networking Platform.",
-    pdf: "/certs/aviatrix.pdf",
+    image: aviatrixImg, // image only
   },
   {
     year: "2024",
-    title: "AWS Certified Cloud Practitioner",
-    subtitle: "Amazon Web Services",
+    title: "RPA Certification",
+    subtitle: "Automation Anywhere University",
     description:
-      "Validated foundational understanding of AWS cloud concepts, services, and best practices. Focused on cloud security, pricing models, and core services.",
-    pdf: "/certs/aws.pdf",
+      "Completed Automation Anywhere RPA certification covering bot creation, task automation, and enterprise A2019 platform. Gained hands-on skills in automating business processes.",
+    image: rpa,
   },
   {
     year: "2024",
@@ -27,7 +34,8 @@ const certifications = [
     subtitle: "Oracle University",
     description:
       "Certified in applying Oracle's Gen AI models to solve business problems. Gained skills in AI-driven automation, content generation, and model fine-tuning.",
-    pdf: "/certs/oracle.pdf",
+    pdf: "/Oracle_certificate.pdf",
+    image: oracleImg,
   },
   {
     year: "2025",
@@ -35,7 +43,8 @@ const certifications = [
     subtitle: "Salesforce Trailhead",
     description:
       "Demonstrated knowledge of responsible AI, prompt engineering, and Salesforce Einstein tools for enhancing CRM intelligence and automation.",
-    pdf: "/certs/salesforce.pdf",
+    pdf: "/Sales_force.pdf",
+    image: salesforceImg,
   },
 ];
 
@@ -69,7 +78,7 @@ function Certifications() {
         Certifications
       </motion.h2>
 
-      {/* Cert Cards */}
+      {/* Certification Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-6xl">
         {certifications.map((cert, index) => (
           <motion.div
@@ -81,34 +90,47 @@ function Certifications() {
             transition={{ duration: 0.6, delay: index * 0.1 }}
           >
             <div>
-              {/* Year with gold color */}
+              {/* Certificate Image */}
+              {cert.image && (
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  className="w-full h-auto rounded-md mb-4 shadow-md"
+                />
+              )}
+
+              {/* Year */}
               <p className="text-sm font-medium mb-1 text-black dark:text-[#FFD700]">
-  {cert.year}
-</p>
+                {cert.year}
+              </p>
 
-
+              {/* Title & Subtitle */}
               <h3 className="text-xl font-bold text-black dark:text-white">{cert.title}</h3>
               <h4 className="text-md text-gray-700 dark:text-gray-300 italic mb-3">
                 {cert.subtitle}
               </h4>
+
+              {/* Description */}
               <p className="text-gray-700 dark:text-gray-400 text-sm">{cert.description}</p>
             </div>
 
-            {/* Eye icon button */}
-            <div className="mt-4">
-              <a
-                href={cert.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 px-5 py-2 rounded-full 
-                           bg-black text-white 
-                           dark:bg-[#FFD700] dark:text-black 
-                           font-medium transition-transform hover:scale-105"
-              >
-                <FaEye className="text-lg" />
-                View
-              </a>
-            </div>
+            {/* View PDF Button (only if PDF is present) */}
+            {cert.pdf && (
+              <div className="mt-4">
+                <a
+                  href={cert.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 px-5 py-2 rounded-full 
+                             bg-black text-white 
+                             dark:bg-[#FFD700] dark:text-black 
+                             font-medium transition-transform hover:scale-105"
+                >
+                  <FaEye className="text-lg" />
+                  View PDF
+                </a>
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
