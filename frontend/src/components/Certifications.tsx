@@ -4,11 +4,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaEye } from "react-icons/fa";
 
-// Import certificate images from src/assets/certificates/
-import aviatrixImg from "../assets/certificates/aviatrix.png";
-import rpa from "../assets/RPA.png";
-import oracleImg from "../public/Oracle_certificate.pdf";
-import salesforceImg from "../public/Sales force.pdf";
+// Import images
+import oracleImg from "../assets/Oracle_certificate.pdf";
+import salesforceImg from "../assets/Sales_force.pdf";
 
 // Certificate data
 const certifications = [
@@ -18,7 +16,7 @@ const certifications = [
     subtitle: "Multicloud Network Associate",
     description:
       "The industry's first multicloud networking certification covering AWS, Azure, GCP, and OCI. Trained to build, secure, and scale multicloud networks using the Aviatrix Cloud Networking Platform.",
-    image: aviatrixImg, // image only
+    // image: aviatrixImg, // Remove or add when file is ready
   },
   {
     year: "2024",
@@ -26,7 +24,6 @@ const certifications = [
     subtitle: "Automation Anywhere University",
     description:
       "Completed Automation Anywhere RPA certification covering bot creation, task automation, and enterprise A2019 platform. Gained hands-on skills in automating business processes.",
-    image: rpa,
   },
   {
     year: "2024",
@@ -90,7 +87,7 @@ function Certifications() {
             transition={{ duration: 0.6, delay: index * 0.1 }}
           >
             <div>
-              {/* Certificate Image */}
+              {/* Certificate Image (only if exists) */}
               {cert.image && (
                 <img
                   src={cert.image}
@@ -105,16 +102,20 @@ function Certifications() {
               </p>
 
               {/* Title & Subtitle */}
-              <h3 className="text-xl font-bold text-black dark:text-white">{cert.title}</h3>
+              <h3 className="text-xl font-bold text-black dark:text-white">
+                {cert.title}
+              </h3>
               <h4 className="text-md text-gray-700 dark:text-gray-300 italic mb-3">
                 {cert.subtitle}
               </h4>
 
               {/* Description */}
-              <p className="text-gray-700 dark:text-gray-400 text-sm">{cert.description}</p>
+              <p className="text-gray-700 dark:text-gray-400 text-sm">
+                {cert.description}
+              </p>
             </div>
 
-            {/* View PDF Button (only if PDF is present) */}
+            {/* View PDF Button (if available) */}
             {cert.pdf && (
               <div className="mt-4">
                 <a
@@ -122,9 +123,9 @@ function Certifications() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 px-5 py-2 rounded-full 
-                             bg-black text-white 
-                             dark:bg-[#FFD700] dark:text-black 
-                             font-medium transition-transform hover:scale-105"
+                    bg-black text-white 
+                    dark:bg-[#FFD700] dark:text-black 
+                    font-medium transition-transform hover:scale-105"
                 >
                   <FaEye className="text-lg" />
                   View PDF
