@@ -4,7 +4,6 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
-  FaPython,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -12,15 +11,17 @@ import {
   SiMysql,
 } from "react-icons/si";
 
-const skills = [
+const skillsTop = [
   { name: "HTML", icon: <FaHtml5 /> },
   { name: "CSS", icon: <FaCss3Alt /> },
   { name: "JavaScript", icon: <FaJs /> },
   { name: "React.js", icon: <FaReact /> },
+];
+
+const skillsBottom = [
   { name: "Tailwind CSS", icon: <SiTailwindcss /> },
   { name: "Spring Boot", icon: <SiSpringboot /> },
   { name: "MySQL", icon: <SiMysql /> },
-  { name: "Python", icon: <FaPython /> },
 ];
 
 function Skills() {
@@ -41,7 +42,7 @@ function Skills() {
 
       {/* Main Heading */}
       <motion.h2
-        className="text-3xl sm:text-4xl mb-10 font-semibold"
+        className="text-3xl sm:text-4xl mb-14 font-semibold"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -49,34 +50,45 @@ function Skills() {
         My Skills
       </motion.h2>
 
-      {/* Skills Grid */}
-      <motion.ul
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
-        initial="hidden"
-        whileInView="visible"
-        variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
-      >
-        {skills.map((skill, i) => (
-          <motion.li
+      {/* Top Row (4 items) */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-5xl mx-auto mb-8">
+        {skillsTop.map((skill, i) => (
+          <motion.div
             key={skill.name}
-            className="flex items-center justify-center gap-3 py-3 px-5 rounded-full border border-gray-300 dark:border-gray-600 shadow-sm font-medium text-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+            className="flex items-center justify-center gap-3 py-3 px-6 rounded-full
+              border border-gray-300 dark:border-gray-600
+              shadow-sm font-medium text-lg hover:scale-105 transition"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.05 }}
           >
-            {/* Icon with updated gold color in dark mode */}
-            <div
-              className="p-2 rounded-full 
-                         bg-black text-white 
-                         dark:bg-transparent dark:text-[#FFD700] 
-                         text-xl transition-all duration-300"
-            >
+            <span className="text-xl dark:text-[#FFD700]">
               {skill.icon}
-            </div>
-            <span className="text-black dark:text-white">{skill.name}</span>
-          </motion.li>
+            </span>
+            {skill.name}
+          </motion.div>
         ))}
-      </motion.ul>
+      </div>
+
+      {/* Bottom Row (3 centered items) */}
+      <div className="flex justify-center gap-6 flex-wrap max-w-5xl mx-auto">
+        {skillsBottom.map((skill, i) => (
+          <motion.div
+            key={skill.name}
+            className="flex items-center justify-center gap-3 py-3 px-6 rounded-full
+              border border-gray-300 dark:border-gray-600
+              shadow-sm font-medium text-lg hover:scale-105 transition"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: i * 0.05 }}
+          >
+            <span className="text-xl dark:text-[#FFD700]">
+              {skill.icon}
+            </span>
+            {skill.name}
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 }
